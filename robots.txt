@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wimlee115.github.io/Dossier-608/sitemap.xml

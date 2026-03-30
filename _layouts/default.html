@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} — {{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="author" content="B. van Rooij">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="{{ page.keywords | default: 'bewindvoering, beschermingsbewind, toezicht bewindvoerder, klacht bewindvoerder, openbare bronnen onderzoek, bewindvoeringssector, CBM kwaliteitsbureau, kwetsbare personen, schuldenbewind' }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Security meta tags -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="{{ page.title }} — {{ site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:site_name" content="Dossier 608">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ page.title }} — {{ site.title }}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+
+  <!-- Geen externe resources, geen cookies, geen tracking -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{ page.title }} — Dossier 608",
+      "description": "{{ page.description | default: site.description }}",
+      "author": {
+        "@type": "Person",
+        "name": "B. van Rooij",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mill",
+          "addressRegion": "Noord-Brabant",
+          "addressCountry": "NL"
+        }
+      },
+      "datePublished": "2026-03-30",
+      "dateModified": "{{ 'now' | date: '%Y-%m-%d' }}",
+      "publisher": {
+        "@type": "Person",
+        "name": "B. van Rooij"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}"
+      },
+      "inLanguage": "nl",
+      "about": {
+        "@type": "Thing",
+        "name": "Bewindvoering in Nederland",
+        "description": "Toezicht op professionele bewindvoerders en beschermingsbewind"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Dossier 608",
+          "item": "{{ '/' | absolute_url }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ page.title }}",
+          "item": "{{ page.url | absolute_url }}"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1 class="site-header__title"><a href="{{ '/' | relative_url }}">Dossier 608</a></h1>
+      <p class="site-header__subtitle">Openbare bronnen onderzoek &mdash; bewindvoering in Nederland</p>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Hoofdnavigatie">
+    <div class="site-nav__inner">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Overzicht</a>
+      <a href="{{ '/netwerk' | relative_url }}"{% if page.url == '/netwerk.html' or page.url == '/netwerk' %} aria-current="page"{% endif %}>Structuur</a>
+      <a href="{{ '/tijdlijn' | relative_url }}"{% if page.url == '/tijdlijn.html' or page.url == '/tijdlijn' %} aria-current="page"{% endif %}>Tijdlijn</a>
+      <a href="{{ '/bevindingen' | relative_url }}"{% if page.url == '/bevindingen.html' or page.url == '/bevindingen' %} aria-current="page"{% endif %}>Bevindingen</a>
+      <a href="{{ '/rechten' | relative_url }}"{% if page.url == '/rechten.html' or page.url == '/rechten' %} aria-current="page"{% endif %}>Uw rechten</a>
+      <a href="{{ '/bronnen' | relative_url }}"{% if page.url == '/bronnen.html' or page.url == '/bronnen' %} aria-current="page"{% endif %}>Bronnen</a>
+      <a href="{{ '/over' | relative_url }}"{% if page.url == '/over.html' or page.url == '/over' %} aria-current="page"{% endif %}>Over</a>
+    </div>
+  </nav>
+
+  <main class="site-content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p><strong>Dossier 608</strong> &mdash; Openbare bronnen onderzoek bewindvoering in Nederland</p>
+      <p>Alle informatie is afkomstig uit openbare bronnen. Zie <a href="{{ '/bronnen' | relative_url }}">bronnen</a> en <a href="{{ '/over' | relative_url }}">verantwoording</a>.</p>
+      <p>Feitelijke onjuistheden? <a href="{{ '/over' | relative_url }}#rectificatie">Rectificatieverzoek indienen</a>.</p>
+      <p>&copy; {{ 'now' | date: "%Y" }} B. van Rooij &mdash; Mill, Noord-Brabant</p>
+    </div>
+  </footer>
+</body>
+</html>

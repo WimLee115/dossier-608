@@ -1,0 +1,21 @@
+title: "Dossier 608"
+description: "14 bewindvoerderskantoren wijzigden hun websites na één klacht. Een openbare bronnen onderzoek naar de bewindvoeringssector in Nederland."
+url: "https://wimlee115.github.io"
+baseurl: "/Dossier-608"
+lang: nl
+encoding: utf-8
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - PREVIEW.html
